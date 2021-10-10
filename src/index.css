@@ -1,13 +1,49 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.imagew{
+    width: 75%;
+}
+.primary{
+    color: #010080;
+}
+.primary1{
+    background-color: #010080;
+}
+.secoundry{
+    color: #f58634;
+}
+.secoundry1{
+    background-color: #f58634;
+}
+.width1{
+    width: 100%;
+}
+.height1{
+    height: 600px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+    text-align: center;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+}
+}
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+.adds{
+    @apply lg:w-60 md:w-48 w-32 xl:w-80 md:p-11 p-7 rounded-lg text-white font-bold mt-1 md:text-xl text-sm
 }
