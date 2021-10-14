@@ -4,6 +4,29 @@ import logo from '../../images/Bountipay 17 blue logo.png'
 import ball from '../../images/Bountipay 15 blue favicon.png'
 import { Link } from 'react-router-dom'
 import { motion} from 'framer-motion'
+import tw from 'twin.macro'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  color: #010080;
+`
+const Header = styled.h1`
+  ${tw`font-bold pb-14 text-xl`}
+`
+const SubHeader = styled.p`
+  ${tw`font-light text-3xl`}
+`
+const ButtonContainer = styled.div`
+  ${tw`mt-4 pt-5`}
+  button{
+    ${tw`rounded-lg text-white px-8 py-1 font-mono text-lg transition duration-300 ease-in-out items-center animate-bounce`}
+    background-color:#010080;
+  }
+  p{
+    ${tw`font-bold mt-1`}
+    color:#f58634;
+  }
+`
 
 const buttonVarients = {
     hover: {scale: 1.1, textShadow: "0px 0px 8px rgb(255,255,255)", boxShadow: "0px 0px 8px rgb(255,255,255)",
@@ -30,26 +53,22 @@ const WelcomeAddress = () => {
             animate="visible"
             exit="exit"
         >
-             <h1 className="primary font-light text-3xl">Welcome to</h1>
+          <Container>
+            <Header>Welcome to</Header>
             <img src={logo} alt="" className=" p-8" />
-            <p className="font-bold primary pb-14 text-xl">PREDICT, WIN, WITHDRAW</p>
+            <SubHeader>PREDICT, WIN, WITHDRAW</SubHeader>
             <div className="App-logo w-20 m-auto">
                 <img src={ball} alt=""/>
             </div>
-            <div className="mt-4 pt-5">
-                <motion.button className="primary1 rounded-lg text-white px-8 py-1 font-mono text-lg transition duration-300 ease-in-out items-center animate-bounce"
-                    variants={buttonVarients}
-                    whileHover="hover"
-                ><Link to="/login">Join Now</Link></motion.button>
-                <motion.p className="secoundry font-bold mt-1"
-                  variants={textMoverVarient}
-                  whileHover="hover"
+            <ButtonContainer>
+                <Link to="/login"><motion.button variants={buttonVarients} whileHover="hover"
+                >Join Now</motion.button></Link>
+                <motion.p variants={textMoverVarient} whileHover="hover"
                 ><Link to="/register">REGISTER</Link></motion.p>
-                <motion.p className="secoundry font-bold"
-                  variants={textMoverVarient}
-                  whileHover="hover"
+                <motion.p variants={textMoverVarient} whileHover="hover"
                 ><Link to="/login">LOGIN</Link></motion.p>
-            </div>
+            </ButtonContainer>
+            </Container>
         </motion.div>
     )
 }

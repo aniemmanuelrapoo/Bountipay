@@ -11,35 +11,38 @@ const Form = styled.form`
     ${tw`items-center text-sm font-bold`}
 `
 const Title = styled.h1`
-    ${tw`md:text-lg text-base font-bold`}
+    ${tw`md:text-xl text-lg font-bold py-2`}
     color: #010080;
 `
 const Side = styled.div`
     ${tw`md:px-4 px-2`}
 `
 const SubTitle = styled.h1`
-    ${tw`md:text-base text-sm font-bold`}
+    ${tw`md:text-base text-sm py-1.5 font-bold`}
     color:#f58634;
 `
 const InputDiv = styled.div`
-    ${tw`mb-1`}
+    ${tw`mb-4`}
     input{
-        ${tw`w-full p-0.5 border-b border-b-blue-900 rounded-lg outline-none md:p-0.5`}
+        ${tw`w-full p-0.5 border-b border-b-blue-900 outline-none md:p-0.5`}
     }
 `
 const Hint = styled.p`
-    ${tw`text-xs`}
+    ${tw`text-xs mb-2`}
     color:#f58634;
 `
 const UploadImg = styled.h1`
-    ${tw`w-40 m-auto text-base font-bold ml-4`}
+    ${tw`text-base font-bold text-center py-1.5`}
 `
 const ButtonTag = styled.div`
-    ${tw`text-right mt-2.5`}
+    ${tw`text-right my-2.5`}
     button{
         ${tw`text-white px-6 py-1 rounded-md font-bold`}
         background-color:#010080;
     }
+`
+const ImageContainer = styled.div`
+    ${tw`flex justify-center pl-5`}
 `
 
 
@@ -86,13 +89,12 @@ const Settings = () => {
                     </Form>
                 </Side>
                 <Side>
-                    <div className="flex justify-center">
+                    <ImageContainer>
                         <div>
-                            <img src={UserImg} alt="" className="w-36" />
+                            <img src={UserImg} alt="" className=":w-36" />
                             <UploadImg>Upload Image</UploadImg>
-                        </div>
-                        
-                    </div>
+                        </div>     
+                    </ImageContainer>
                     <SubTitle>CHANGE PASSWORD DATA</SubTitle>
                     <Hint>*Minimum of 6 characters</Hint>
                     <Hint>*Must contain letters and numbers(no spaces)</Hint>

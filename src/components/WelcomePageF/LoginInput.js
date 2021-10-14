@@ -1,8 +1,35 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './LoginPage.css'
+import styled from 'styled-components'
+import tw from 'twin.macro'
 
+export const Header = styled.div`
+  ${tw`text-3xl font-bold py-5 transition duration-300 ease-in-out items-center animate-bounce text-center`}
+  color: #f58634;
+`
+export const FormTag = styled.form`
+  ${tw`text-white p-3 text-left rounded-lg`}
+  background-color:#010080;
+`
+const InputContainer = styled.div`
+  ${tw`mt-5`}
+  label{
+    ${tw`text-white`}
+  }
+  input{
+    ${tw`w-full bg-transparent border-b border-yellow-400 outline-none px-2`}
+  }
+`
+const ForgetPass = styled.p`${tw`text-white py-4 text-sm`}`
+export const ButtonContainer = styled.div`
+  ${tw`m-auto flex justify-center`}
+  button{
+    ${tw`py-1 my-3 border border-yellow-400 w-80 hover:bg-transparent text-white rounded-2xl`}
+    background-color: #f58634;
+  }
+`
+const NotReg = styled.p`${tw`text-white py-1 text-sm`}`
 const containerVariants = {
     hidden: {opacity: 0, x: '100vw'},
     visible: {opacity: 1, x: 0,
@@ -29,27 +56,26 @@ const LoginInput = () => {
             animate="visible"
             exit="exit"
         >
-            <h1 className="secoundry text-3xl font-bold py-5 transition duration-300 ease-in-out items-center animate-bounce text-center">LOGIN</h1>
-            <form className="primary1 text-white p-3 text-left rounded-lg">
-                <div className="">
-                    <label className="text-white">Username/Email</label>
-                    <motion.input type="text" name=""  className="w-full rounded-md bg-transparent border-b border-yellow-400 outline-none px-2" placeholder="Username Or Email" variants={textMoverVarient}
+            <Header>LOGIN</Header>
+            <FormTag>
+                <InputContainer>
+                  <label>Username/Email</label>
+                  <motion.input type="text" placeholder="Username Or Email" variants={textMoverVarient}
                   whileHover="hover" />
-                </div>
-                <div className="mt-5">
-                <label className="text-white">Password</label>
-                    <motion.input type="password" name="" className="w-full rounded-md bg-transparent border-b border-yellow-400 outline-none px-2" placeholder="Input Password" variants={textMoverVarient} whileHover="hover" />
-                </div>
-                <p className="text-white py-4 text-sm"><Link to="">Forget Password?</Link></p>
-                <div className="m-auto flex justify-center">
-                <Link to="/predict"><motion.button className="py-1 my-3 border border-yellow-400 w-80 secoundry1 hover:bg-transparent text-white rounded-2xl loginbtn" type="button"
+                </InputContainer>
+                <InputContainer>
+                  <label>Password</label>
+                  <motion.input type="password" placeholder="Input Password" variants={textMoverVarient} whileHover="hover" />
+                </InputContainer>
+                <ForgetPass><Link to="">Forget Password?</Link></ForgetPass>
+                <ButtonContainer>
+                  <Link to="/predict"><motion.button type="button"
                   variants={buttonVarients}
                   whileHover="hover"
                 >Login</motion.button></Link>
-                </div>
-                
-                <p className="text-white py-1 text-sm"><Link to="/register">Not registered? Click here</Link></p>
-            </form>
+                </ButtonContainer>
+                <NotReg><Link to="/register">Not registered? Click here</Link></NotReg>
+            </FormTag>
         </motion.div>
     )
 }

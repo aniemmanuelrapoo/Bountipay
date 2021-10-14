@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import WelcomeAddress from './WelcomeAddress'
 import WelcomeImage from './WelcomeImage'
@@ -11,24 +10,23 @@ import image5 from '../../images/PngItem_184848.png'
 import image6 from '../../images/PngItem_1010934.png'
 import image7 from '../../images/PngItem_1486656.png'
 import image8 from '../../images/PngItem_5268335.png'
-
+import { GeneralContainer, MainContainer, ImageMover, FooterContainer } from './styledCom/styledCom'
 
 const WelcomePage = () => {
     return (
-        <div className=" height1 items-center justify-center bg-white">
-            <div className=" grid md:grid-cols-3 items-center justify-center md:pr-20 lg:pr-36 mb-3 md:mb-0">
-            <div className="height1 flex flex-nowrap overflow-x-hidden relative col-span-2">       
+        <GeneralContainer>
+            <MainContainer>
+            <ImageMover>       
                    <WelcomeImage images={[image1, image2, image3, image4, image5, image6, image7, image8]}/>
-            </div>
-            <div className="">   
+            </ImageMover>
+            <div>   
                 <WelcomeAddress />         
-            </div>
-                   
-            </div>
-            <div className="flex items-center justify-between primary font-bold flex-col md:flex-row">
+            </div>    
+            </MainContainer>
+            <FooterContainer>
                 <Footer />
-            </div>
-        </div>
+            </FooterContainer>
+        </GeneralContainer>
     )
 }
 
