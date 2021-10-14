@@ -62,7 +62,7 @@ const RegisterInput = () => {
                     <p className="text-white text-sm">Must contain letters and numbers(no spaces)</p>
                 </div>
                 <div className="m-auto flex justify-center">
-                    <Link to="/dashboard"><motion.button className="py-1 mt-3 border border-yellow-400 w-80 secoundry1 hover:bg-transparent text-white rounded-2xl loginbtn" type="button"
+                    <Link to="/predict"><motion.button className="py-1 mt-3 border border-yellow-400 w-80 secoundry1 hover:bg-transparent text-white rounded-2xl loginbtn" type="button"
                     variants={buttonVarients}
                     whileHover="hover"
                 >Register</motion.button></Link>

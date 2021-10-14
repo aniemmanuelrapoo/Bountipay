@@ -1,23 +1,9 @@
-.listadd > span {
-    margin: 0px 10px;
-}
-.gridiv > div{
-    padding: 0px 20px;
-    margin-top: 20px;
-}
-.gridiv img{
-    @apply ml-5 lg:ml-20
+.predictTag{
+    @apply text-white p-1 rounded-md
 }
 .sidebar{
-    @apply md:text-xl text-sm border-b-2 sm:border-b-0 items-center
+    @apply md:text-xl text-sm border-b-2 sm:border-b-0 items-center mb-2
 }
 .sidesvg{
     @apply md:w-6 md:h-6 w-3 inline-block
 }
-.table td{
-    padding: 5px;
-    border: 1px solid #ddd;
-}
-.table tr:nth-child(even){background-color: #f2f2f2;}
-
-.table tr:hover {background-color: #ddd;}

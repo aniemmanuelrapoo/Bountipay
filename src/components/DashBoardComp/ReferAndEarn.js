@@ -1,25 +1,46 @@
 import React from 'react'
+import styled from 'styled-components'
+import tw from 'twin.macro'
+
+const Header = styled.div`
+    ${tw`to-black md:text-2xl text-xl font-bold p-6`}
+    color:#010080;
+`
+const Container = styled.div`
+    ${tw`lg:px-8 text-left pt-6`}
+    color:#010080;
+`
+const SubHeader = styled.p` ${tw`text-base md:text-xl font-bold pb-11`}`
+const FlexContainer = styled.div`${tw`flex flex-row text-base md:text-xl font-bold pb-1`}`
+const Referal = styled.div`${tw`md:w-48 w-40 border-b-2`}`
+const ReferalDash = styled.div`${tw`md:w-16 w-14`}`
+const ReferalNum = styled.div`${tw`md:w-32 w-28`}`
+const Referal2 = styled.div`${tw`md:w-48 w-40`}`
+const Button = styled.button`
+    ${tw`text-white font-bold p-1 rounded-md mt-3 md:text-lg`}
+    background-color:#f58634;
+`
 
 const ReferAndEarn = () => {
     return (
         <div>
-            <h1 className="primary to-black md:text-2xl text-xl font-bold p-6">Refer and Earn</h1>
-            <div className="lg:px-8 text-left pt-6">
-                <p className="primary text-base md:text-xl font-bold pb-11">Refer someone and earn N100 per person.</p>
-                <div className="flex flex-row text-base md:text-xl primary font-bold pb-1">
-                    <div className="md:w-48 w-40 border-b-2">Referals</div>
-                    <div className="md:w-16 w-14">-</div>
-                    <div className="md:w-32 w-28">3</div>
-                </div>
-                <div className="flex flex-row text-base md:text-xl primary font-bold pb-1">
-                    <div className="md:w-48 w-40">Referral payment</div>
-                    <div className="md:w-16 w-14">-</div>
-                    <div className="md:w-32 w-28">N300</div>
-                </div>
+            <Header>Refer and Earn</Header>
+            <Container>
+                <SubHeader>Refer someone and earn N100 per person.</SubHeader>
+                <FlexContainer>
+                    <Referal>Referals</Referal>
+                    <ReferalDash>-</ReferalDash>
+                    <ReferalNum>3</ReferalNum>
+                </FlexContainer>
+                <FlexContainer>
+                    <Referal2>Referral payment</Referal2>
+                    <ReferalDash>-</ReferalDash>
+                    <ReferalNum>N300</ReferalNum>
+                </FlexContainer>
                 <div>
-                    <button className="secoundry1 text-white font-bold p-1 rounded-md mt-3 md:text-lg">Refer Someone</button>
+                    <Button>Refer Someone</Button>
                 </div>
-            </div>
+            </Container>
         </div>
     )
 }

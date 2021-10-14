@@ -1,31 +1,60 @@
 import React from 'react'
+import styled from 'styled-components'
+import tw from 'twin.macro'
+
+const Container = styled.div`color: #010080;`
+const Header = styled.p`${tw`text-lg font-bold md:py-3 py-2`}`
+const MainContainer = styled.div`${tw`text-left`}`
+const SubHeader = styled.p`
+    ${tw`text-base mb-2`}
+    color:#f58634;
+`
+const FormContainer = styled.form`
+    ${tw`items-center text-base md:w-96 w-80 font-bold`}
+`
+const InputContainer = styled.div`
+    ${tw`mb-2`}
+    input{
+        ${tw`w-full md:p-2 p-1 border border-blue-900 rounded-lg outline-none`}
+    }
+    textarea{
+        ${tw`w-full md:p-2 p-1 border border-blue-900 rounded-3xl outline-none`}
+    }
+`
+const ButtonContainer = styled.div`
+    ${tw`text-right`}
+    button{
+        ${tw`text-white px-6 py-1 rounded-md font-bold`}
+        background-color:#010080;
+    }
+`
+
 
 const Help = () => {
     return (
-        <div className="primary">
-            <p className="primary text-lg font-bold py-4">HELP</p>
-            <div className="text-left">
-                <p className="secoundry text-base mb-2">Need help? Chat us now</p>
-                <form className="items-center text-base w-96 font-bold">
-                    <div className="mb-3">
+        <Container>
+            <Header>HELP</Header>
+            <MainContainer>
+                <SubHeader>Need help? Chat us now</SubHeader>
+                <FormContainer>
+                    <InputContainer>
                         <label>Name*</label><br />
-                        <input type="text" className="w-full md:p-2 p-1 border border-blue-900 rounded-lg outline-none" />  
-                    </div>
-                    <div className="mb-3">
+                        <input type="text" />  
+                    </InputContainer>
+                    <InputContainer>
                         <label>Email*</label><br />
-                        <input type="email" className="w-full md:p-2 p-1 border border-blue-900 rounded-lg outline-none" />  
-                    </div>
-                    <div className="mb-3">
+                        <input type="email" />  
+                    </InputContainer>
+                    <InputContainer>
                         <label>Message*</label><br />
-                        <textarea name="" id="" cols="20" rows="5" className="w-full md:p-2 p-1 border border-blue-900 rounded-3xl outline-none"></textarea> 
-                    </div>
-                    <div className="text-right">
-                        <button className="primary1 text-white px-6 py-1 rounded-md font-bold">Submit</button>
-                    </div>
-                    
-                </form>
-            </div>
-        </div>
+                        <textarea name="" id="" cols="20" rows="5"></textarea> 
+                    </InputContainer>
+                    <ButtonContainer>
+                        <button>Submit</button>
+                    </ButtonContainer> 
+                </FormContainer>
+            </MainContainer>
+        </Container>
     )
 }
 

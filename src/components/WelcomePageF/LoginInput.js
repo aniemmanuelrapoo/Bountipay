@@ -42,13 +42,12 @@ const LoginInput = () => {
                 </div>
                 <p className="text-white py-4 text-sm"><Link to="">Forget Password?</Link></p>
                 <div className="m-auto flex justify-center">
-                <Link to="/dashboard"><motion.button className="py-1 my-3 border border-yellow-400 w-80 secoundry1 hover:bg-transparent text-white rounded-2xl loginbtn" type="button"
+                <Link to="/predict"><motion.button className="py-1 my-3 border border-yellow-400 w-80 secoundry1 hover:bg-transparent text-white rounded-2xl loginbtn" type="button"
                   variants={buttonVarients}
                   whileHover="hover"
                 >Login</motion.button></Link>
                 </div>
                 
-
                 <p className="text-white py-1 text-sm"><Link to="/register">Not registered? Click here</Link></p>
             </form>
         </motion.div>

@@ -12,6 +12,36 @@ import INTER from '../../images/intermiland.png'
 import MADRED from '../../images/realmad.png'
 import TUTTH from '../../images/tottham.png'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import tw from 'twin.macro'
+
+const ScoreContainer = styled.div`
+${tw`flex flex-row flex-nowrap items-center justify-center mb-2 lg:text-xl font-medium text-xs sm:text-base`}
+color:#010080;
+img{
+    ${tw`w-9`}
+  }
+`
+const ClubName = styled.div`${tw`sm:w-24 md:w-40 px-6`} width:70px;`
+const ClubVerse = styled.span`
+  ${tw`px-2 py-1 rounded-sm text-white md:text-lg text-sm mx-2 md:mx-3 lg:mx-5`}
+  background-color: #010080;
+`
+const PredictContainer = styled.div`${tw`px-6`}`
+const Header = styled.p`
+  ${tw`font-bold text-base md:text-lg md:p-6 p-4`}
+  color:#010080;
+`
+const SearchContainer = styled.div`
+  ${tw`flex justify-end mt-2`}
+  input{
+    ${tw`rounded-2xl border-4 text-center`}
+  }
+`
+const MainContainer = styled.div`
+  ${tw`items-center`}
+`
 
 const textMoverVarient ={
     hover:{scale: 1.2, color: '#010080', originX: 0,
@@ -21,92 +51,93 @@ const textMoverVarient ={
 const PredictContent = () => {
     return (
         <>
-            <p className="primary font-bold text-base md:text-lg md:p-6 p-4">Predict Upcoming Matches Score</p>
-            <div className="items-center">
+            <Header>Predict Upcoming Matches Score</Header>
+            <MainContainer>
 
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>MAN U</div>
-                  <p className="items-end"><img src={MANU} alt="" className="w-9"/></p>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={CHELSE} alt="" className="w-9" />
-                  <div>CHELSEA</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
+                <ScoreContainer>
+                  <ClubName>MAN U</ClubName>
+                  <img src={MANU} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={CHELSE} alt="" />
+                  <ClubName>CHELSEA</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
 
-                <div className="grid grid-cols-6 gridiv tems-center mt-2">
-                  <div>arsena</div>
-                  <img src={ARSE} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={MANCITY} alt="" className="w-9" />
-                  <div>man city</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
+                <ScoreContainer>
+                  <ClubName>arsena</ClubName>
+                  <img src={ARSE} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={MANCITY} alt="" />
+                  <ClubName>man city</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
 
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>barca</div>
-                  <img src={BARCA} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={CHELSE} alt="" className="w-9" />
-                  <div>CHELSEA</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
+                <ScoreContainer>
+                  <ClubName>barca</ClubName>
+                  <img src={BARCA} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={CHELSE} alt="" />
+                  <ClubName>CHELSEA</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
 
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>ajax</div>
-                  <img src={AJAX} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={LIVEPOOL} alt="" className="w-9" />
-                  <div>liverpool</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
+                <ScoreContainer>
+                  <ClubName>ajax</ClubName>
+                  <img src={AJAX} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={LIVEPOOL} alt="" />
+                  <ClubName>liverpool</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
+
+                <ScoreContainer>
+                  <ClubName>ac milan</ClubName>
+                  <img src={ACM} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={INTER} alt="" />
+                  <ClubName>intermiland</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
+
+                <ScoreContainer>
+                  <ClubName>MAN U</ClubName>
+                  <img src={MANU} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={ARSE} alt="" />
+                  <ClubName>arsena</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
+
+                <ScoreContainer>
+                  <ClubName>madrid</ClubName>
+                  <img src={MADRED} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={ACM} alt="" />
+                  <ClubName>ac milan</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
+
+                <ScoreContainer>
+                  <ClubName>Tortteham</ClubName>
+                  <img src={TUTTH} alt="" />
+                  <div><ClubVerse>VS</ClubVerse></div>
+                  <img src={CHELSE} alt="" />
+                  <ClubName>CHELSEA</ClubName>
+                  <PredictContainer><motion.span className="secoundry1 predictTag" variants={textMoverVarient}
+                  whileHover="hover"><Link to="/predictType">PREDICT</Link></motion.span></PredictContainer>
+                </ScoreContainer>
                 
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>ac milan</div>
-                  <img src={ACM} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={INTER} alt="" className="w-9" />
-                  <div>intermiland</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
-
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>MAN U</div>
-                  <img src={MANU} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={ARSE} alt="" className="w-9" />
-                  <div>arsena</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
-
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>madrid</div>
-                  <img src={MADRED} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={ACM} alt="" className="w-9" />
-                  <div>ac milan</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
-
-                <div className="grid grid-cols-6 gridiv items-center">
-                  <div>Tortteham</div>
-                  <img src={TUTTH} alt="" className="w-9"/>
-                  <div><span className="primary1 p-1 rounded-md text-white">VS</span></div>
-                  <img src={CHELSE} alt="" className="w-9" />
-                  <div>CHELSEA</div>
-                  <div><motion.span className="secoundry1 text-white p-1 rounded-md" variants={textMoverVarient}
-                  whileHover="hover">PREDICT</motion.span></div>
-                </div>
-                <div className="flex justify-end mt-2">
-                  <input type="text" name="" placeholder="Search" className="rounded-2xl border-4 text-center" />
-                </div>
-            </div>
+                <SearchContainer>
+                  <input type="text" name="" placeholder="Search" />
+                </SearchContainer>
+            </MainContainer>
             
         </>
     )
