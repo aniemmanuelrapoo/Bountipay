@@ -10,10 +10,10 @@ import styled from 'styled-components'
 const Container = styled.div`
   color: #010080;
 `
-const Header = styled.h1`
+const SubHeader = styled.h1`
   ${tw`font-bold pb-14 text-xl`}
 `
-const SubHeader = styled.p`
+const Header = styled.p`
   ${tw`font-light text-3xl`}
 `
 const ButtonContainer = styled.div`
